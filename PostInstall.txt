@@ -1,0 +1,1 @@
+For more information on db-entropy, see http://github.com/jayzes/db-entropy

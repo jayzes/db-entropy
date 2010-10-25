@@ -1,0 +1,53 @@
+= db-entropy
+
+* http://github.com/#{github_username}/#{project_name}
+
+== DESCRIPTION:
+
+A quick and dirty way to generate random database configuration files for Rails
+
+== FEATURES:
+
+* Can generate randomized database.yml and mongoid.yml configurations.  This is especially useful in CI-type environments where you have the same application running multiple times concurrently and you need to make sure they won't clobber each other.
+
+== SYNOPSIS:
+
+* rake entropy:randomize_mysql_config will generate a random config/database.yml for MySQL with entries for development, test, and cucumber.  Note that test and cucumber will point to the same database.
+* rake entropy:randomize_mongoid_config will generate a random config/mongoid.yml for Mongoid with entries for development, test, and cucumber.  Note that test and cucumber will point to the same database.
+* rake entropy:randomize_db_configs will generate both MySQL and Mongoid configurations
+
+You'll want to make sure that your build scripts call rake db:create:all after running one of the entropy tasks, and that they call rake db:drop:all after running all tests to make sure you don't leave empty databases hanging around.
+
+== REQUIREMENTS:
+
+* None
+
+== INSTALL:
+
+* gem install db-entropy OR add it to your gem bundle
+* If you're using Rails 2.3, add a "require 'db-entropy/tasks'" line to your Rakefile
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2010 Jay Zeschin
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
