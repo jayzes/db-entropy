@@ -16,6 +16,8 @@ A quick and dirty way to generate random database configuration files for Rails
 * rake entropy:randomize_mongoid_config will generate a random config/mongoid.yml for Mongoid with entries for development, test, and cucumber.  Note that test and cucumber will point to the same database.
 * rake entropy:randomize_db_configs will generate both MySQL and Mongoid configurations
 
+You may also specify an environment variable (EXTRA_ENVS) as a comma-separated list of additional environments to alias to the test DB.  This is useful for master-slave configurations, etc.
+
 You'll want to make sure that your build scripts call rake db:create:all after running one of the entropy tasks, and that they call rake db:drop:all after running all tests to make sure you don't leave empty databases hanging around.
 
 == REQUIREMENTS:

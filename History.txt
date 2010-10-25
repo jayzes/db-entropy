@@ -1,2 +1,4 @@
 === 0.0.1 2010-10-25
   * Initial release
+=== 0.1.0 2010-10-25
+  * Added support for an EXTRA_ENVS environment variable to add custom aliases for the test DB
