@@ -9,7 +9,9 @@ class DbEntropy::Mysql < DbEntropy::Base
                    'password' => nil}
       conf
     end
-    db_config['cucumber'] = db_config['test']
+    extra_environments.each do |env|
+      db_config[env] = db_config['test']
+    end
     db_config
   end
 
