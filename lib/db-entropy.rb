@@ -7,4 +7,5 @@ end
 
 require 'db-entropy/base'
 require 'db-entropy/mysql'
+require 'db-entropy/mysql2'
 require 'db-entropy/mongoid'
