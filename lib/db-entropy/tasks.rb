@@ -6,6 +6,11 @@ namespace :entropy do
     DbEntropy::Mysql.new.generate_yaml('config/database.yml')
   end
   
+  task :randomize_mysql2_config do
+    DbEntropy::Mysql2.new.generate_yaml('config/database.yml')
+  end
+  
+  
   task :randomize_mongoid_config do
     DbEntropy::Mongoid.new.generate_yaml('config/mongoid.yml')
   end
