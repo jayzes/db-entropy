@@ -4,7 +4,7 @@ class DbEntropy::Base
   
   def initialize(extra_envs=ENV['EXTRA_ENVS'])
     extra_envs ||= ''
-    @extra_environments = (['cucumber'] + extra_envs.split(',')).uniq.compact
+    @extra_environments = extra_envs.split(',').uniq.compact
   end
   
   def generate_random_name(length=10)
