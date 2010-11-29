@@ -17,7 +17,7 @@ class DbEntropy::Base
   end
   
   def write_to_yaml(db_config,path)
-    File.open(path, 'w+') { |out| YAML.dump(db_config, out) }
+    File.open(path,  File::WRONLY | File::TRUNC | File::CREAT) { |out| YAML.dump(db_config, out) }
   end
   
 end
